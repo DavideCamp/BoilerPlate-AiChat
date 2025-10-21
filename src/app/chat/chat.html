@@ -1,0 +1,44 @@
+<div class="chat-wrapper">
+  <header class="chat-header">
+    <div class="chat-branding">
+      <span class="chat-logo" aria-hidden="true">💬</span>
+      <div class="chat-titles">
+        <h2>{{ chatTitle }}</h2>
+        <p>{{ chatDescription }}</p>
+        <div class="chat-status" [class.typing]="isTyping">
+          <span class="status-dot" aria-hidden="true"></span>
+          {{ isTyping ? 'Assistant sta scrivendo…' : 'Pronto a rispondere' }}
+        </div>
+      </div>
+    </div>
+
+    <button (click)="toggleDarkMode()" aria-label="Toggle dark mode">
+      {{ darkMode ? '🌙' : '☀️' }}
+    </button>
+  </header>
+  <div class="chat-container">
+    <div class="messages" #messagesContainer>
+      <div *ngFor="let msg of messages" [ngClass]="['message', msg.role]">
+        {{ msg.content }}
+      </div>
+
+      <!-- Effetto scrittura -->
+      <div *ngIf="isTyping" class="message assistant typing" aria-live="polite">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <form (ngSubmit)="sendMessage()" novalidate>
+      <input
+        [(ngModel)]="userInput"
+        name="userInput"
+        placeholder="Scrivi un messaggio..."
+        autocomplete="off"
+        aria-label="Messaggio da inviare"
+      />
+      <button type="submit" aria-label="Invia messaggio">➤</button>
+    </form>
+  </div>
+</div>

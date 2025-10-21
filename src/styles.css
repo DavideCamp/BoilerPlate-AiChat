@@ -1,1 +1,194 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --chat-bg-start: #1f2029;
+  --chat-bg-end: #111218;
+  --chat-border-color: rgba(255, 255, 255, 0.05);
+  --chat-box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+
+  --chat-header-start: rgba(74, 85, 255, 0.18);
+  --chat-header-end: rgba(84, 197, 248, 0.1);
+  --chat-header-border: rgba(255, 255, 255, 0.04);
+
+  --chat-title-color: #f7f7f8;
+  --chat-subtitle-color: #b0b4c7;
+
+  --chat-logo-bg: rgba(84, 197, 248, 0.18);
+  --chat-logo-shadow: 0 10px 20px rgba(84, 197, 248, 0.25);
+
+  --chat-status-color: #9db0ff;
+  --chat-status-bg: rgba(100, 132, 255, 0.12);
+  --chat-status-border: rgba(157, 176, 255, 0.2);
+  --chat-status-typing-color: #ffd166;
+  --chat-status-typing-bg: rgba(255, 209, 102, 0.12);
+  --chat-status-typing-border: rgba(255, 209, 102, 0.3);
+  --chat-status-dot-color: #4ade80;
+  --chat-status-dot-glow: rgba(74, 222, 128, 0.4);
+  --chat-status-typing-glow: rgba(255, 209, 102, 0.4);
+
+  --chat-messages-bg: transparent;
+  --chat-scrollbar-width: 6px;
+  --chat-scrollbar-thumb: #444;
+  --chat-scrollbar-thumb-hover: #666;
+
+  --chat-message-user-start: #4bd43b;
+  --chat-message-user-end: #48cc60;
+  --chat-message-user-color: #ffffff;
+  --chat-message-user-shadow: 0 10px 25px rgba(72, 132, 255, 0.35);
+
+  --chat-message-assistant-bg: rgba(45, 48, 66, 0.85);
+  --chat-message-assistant-color: #eaeaea;
+  --chat-message-assistant-border: rgba(112, 119, 147, 0.25);
+  --chat-message-assistant-shadow: 0 10px 25px rgba(12, 15, 35, 0.45);
+
+  --chat-form-bg: rgba(10, 11, 18, 0.9);
+  --chat-form-border: rgba(255, 255, 255, 0.05);
+
+  --chat-input-bg: rgba(47, 48, 61, 0.9);
+  --chat-input-border: rgba(255, 255, 255, 0.04);
+  --chat-input-color: #ffffff;
+  --chat-input-placeholder: #888;
+  --chat-input-focus-bg: rgba(60, 65, 92, 0.95);
+  --chat-input-focus-border: rgba(122, 140, 255, 0.5);
+
+  --chat-button-color: #ffffff;
+  --chat-button-bg-start: #5561ff;
+  --chat-button-bg-end: #6e8bff;
+  --chat-button-hover-start: #6772ff;
+  --chat-button-hover-end: #82a0ff;
+  --chat-button-shadow: 0 12px 25px rgba(85, 97, 255, 0.35);
+  --chat-button-hover-shadow: 0 16px 30px rgba(85, 97, 255, 0.45);
+
+  --chat-typing-bg: #2b2b2b;
+  --chat-typing-color: #ccc;
+  --chat-typing-dot: #888;
+}
+
+:root[data-theme='dark'] {
+  --chat-bg-start: #0f111a;
+  --chat-bg-end: #08090f;
+  --chat-border-color: rgba(255, 255, 255, 0.07);
+  --chat-box-shadow: 0 30px 70px rgba(3, 7, 18, 0.7);
+
+  --chat-header-start: rgba(94, 104, 255, 0.22);
+  --chat-header-end: rgba(110, 215, 255, 0.16);
+  --chat-header-border: rgba(255, 255, 255, 0.06);
+
+  --chat-title-color: #f5f7ff;
+  --chat-subtitle-color: #c7cbe7;
+
+  --chat-logo-bg: rgba(110, 215, 255, 0.18);
+  --chat-logo-shadow: 0 14px 32px rgba(110, 215, 255, 0.3);
+
+  --chat-status-color: #a5b8ff;
+  --chat-status-bg: rgba(116, 136, 255, 0.15);
+  --chat-status-border: rgba(165, 184, 255, 0.25);
+  --chat-status-typing-color: #ffe082;
+  --chat-status-typing-bg: rgba(255, 224, 130, 0.18);
+  --chat-status-typing-border: rgba(255, 224, 130, 0.32);
+  --chat-status-dot-color: #52ffa1;
+  --chat-status-dot-glow: rgba(82, 255, 161, 0.45);
+  --chat-status-typing-glow: rgba(255, 224, 130, 0.42);
+
+  --chat-messages-bg: rgba(12, 14, 22, 0.95);
+  --chat-scrollbar-thumb: #3c4157;
+  --chat-scrollbar-thumb-hover: #51587a;
+
+  --chat-message-user-start: #4c6bff;
+  --chat-message-user-end: #6a8bff;
+  --chat-message-user-shadow: 0 14px 30px rgba(76, 107, 255, 0.4);
+
+  --chat-message-assistant-bg: rgba(36, 39, 58, 0.92);
+  --chat-message-assistant-color: #f0f3ff;
+  --chat-message-assistant-border: rgba(112, 124, 186, 0.35);
+  --chat-message-assistant-shadow: 0 12px 30px rgba(8, 12, 40, 0.55);
+
+  --chat-form-bg: rgba(8, 10, 20, 0.95);
+  --chat-form-border: rgba(255, 255, 255, 0.06);
+
+  --chat-input-bg: rgba(38, 42, 64, 0.95);
+  --chat-input-border: rgba(94, 104, 255, 0.24);
+  --chat-input-color: #f5f7ff;
+  --chat-input-placeholder: rgba(197, 201, 226, 0.7);
+  --chat-input-focus-bg: rgba(44, 48, 72, 0.98);
+  --chat-input-focus-border: rgba(122, 146, 255, 0.6);
+
+  --chat-button-color: #f7f9ff;
+  --chat-button-bg-start: #5b66ff;
+  --chat-button-bg-end: #7a96ff;
+  --chat-button-hover-start: #6c77ff;
+  --chat-button-hover-end: #8aa5ff;
+  --chat-button-shadow: 0 14px 28px rgba(91, 102, 255, 0.42);
+  --chat-button-hover-shadow: 0 20px 36px rgba(91, 102, 255, 0.5);
+
+  --chat-typing-bg: rgba(40, 44, 66, 0.95);
+  --chat-typing-color: #e2e7ff;
+  --chat-typing-dot: rgba(159, 166, 208, 0.95);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --chat-bg-start: #ffffff;
+    --chat-bg-end: #f3f4f6;
+    --chat-border-color: rgba(0, 0, 0, 0.08);
+    --chat-box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+
+    --chat-header-start: rgba(137, 180, 255, 0.16);
+    --chat-header-end: rgba(255, 255, 255, 0.7);
+    --chat-header-border: rgba(0, 0, 0, 0.05);
+
+    --chat-title-color: #1f2937;
+    --chat-subtitle-color: #475467;
+
+    --chat-logo-bg: rgba(137, 180, 255, 0.24);
+    --chat-logo-shadow: none;
+
+    --chat-status-color: #3b5bdb;
+    --chat-status-bg: rgba(137, 180, 255, 0.14);
+    --chat-status-border: rgba(137, 180, 255, 0.3);
+    --chat-status-typing-color: #b7791f;
+    --chat-status-typing-bg: rgba(255, 205, 92, 0.16);
+    --chat-status-typing-border: rgba(255, 205, 92, 0.32);
+    --chat-status-dot-glow: rgba(74, 222, 128, 0.35);
+    --chat-status-typing-glow: rgba(255, 205, 92, 0.35);
+
+    --chat-messages-bg: rgba(255, 255, 255, 0.9);
+
+    --chat-message-user-start: #3d7aff;
+    --chat-message-user-end: #5d97ff;
+    --chat-message-user-color: #ffffff;
+    --chat-message-user-shadow: 0 10px 25px rgba(72, 132, 255, 0.25);
+
+    --chat-message-assistant-bg: rgba(242, 244, 248, 0.95);
+    --chat-message-assistant-color: #2f3640;
+    --chat-message-assistant-border: rgba(137, 180, 255, 0.4);
+    --chat-message-assistant-shadow: 0 10px 25px rgba(137, 180, 255, 0.25);
+
+    --chat-form-bg: rgba(255, 255, 255, 0.9);
+    --chat-form-border: rgba(0, 0, 0, 0.05);
+
+    --chat-input-bg: rgba(255, 255, 255, 0.92);
+    --chat-input-border: rgba(15, 23, 42, 0.08);
+    --chat-input-color: #0f172a;
+    --chat-input-placeholder: #667085;
+    --chat-input-focus-bg: #ffffff;
+    --chat-input-focus-border: rgba(79, 111, 255, 0.35);
+
+    --chat-button-bg-start: #4f73ff;
+    --chat-button-bg-end: #6c96ff;
+    --chat-button-hover-start: #5c83ff;
+    --chat-button-hover-end: #7ba7ff;
+    --chat-button-shadow: 0 12px 25px rgba(79, 115, 255, 0.28);
+    --chat-button-hover-shadow: 0 16px 30px rgba(79, 115, 255, 0.38);
+
+    --chat-typing-bg: rgba(233, 236, 245, 0.9);
+    --chat-typing-color: #475467;
+    --chat-typing-dot: #94a3b8;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(160deg, var(--chat-bg-start) 0%, var(--chat-bg-end) 100%);
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--chat-title-color);
+}
